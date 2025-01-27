@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-#define tam 3
+#define tam 2
 #define personagem 'b'
 
 typedef struct pos{
@@ -80,6 +80,7 @@ int main(void) {
 // FUNÇÕES: 
 
 void ExibirLabirinto(Labirinto labirinto[tam][tam], Posicao jogador) {
+    Posicao saida = {tam-1, tam-1};
     for (int i = 0; i < tam; i++) {
         // Exibindo as bordas superiores do labirinto
         for (int j = 0; j < tam; j++) {
@@ -102,6 +103,8 @@ void ExibirLabirinto(Labirinto labirinto[tam][tam], Posicao jogador) {
 
             if (i == jogador.coordx && j == jogador.coordy) {
                 printf(" %c ", personagem); // Exibe o personagem
+            } else if(i == saida.coordx && j == saida.coordy) {
+                printf(" E "); // Símbolo da saída
             } else {
                 printf("   "); // Espaço vazio
             }
