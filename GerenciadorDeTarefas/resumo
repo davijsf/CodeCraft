@@ -1,0 +1,24 @@
+-- Projetinho simples de um Gerenciador de tarefas com interface, utilizando java SWING
+
+Para conectar ao seu Banco de Dados local, basta adicionar em /Conexao.java:
+- root
+- senha
+- localhost
+- caminho do banco
+
+Criando BD:
+CREATE DATABASE tarefa;
+USE tarefa;
+
+CREATE TABLE tarefas (
+id int not null auto_increment primary key,
+descricao varchar(255) not null,
+concluida boolean default false
+);
+
+--> Agora é só compilar e executar!
+
+For compiles:
+--> javac -cp "lib/mysql-connector-j-9.4.0.jar" -d bin src/*.java
+For execute:
+--> java -cp "bin;lib/mysql-connector-j-9.4.0.jar" Main
